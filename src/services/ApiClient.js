@@ -18,4 +18,6 @@ http.interceptors.response.use(function(response) {
 
 export const login = ({ email, password }) => http.post('/login', { email, password })
 
+export const logout = () => http.post('/logout')
+
 export const getTweets = () => http.get('/tweets')

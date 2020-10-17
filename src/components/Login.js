@@ -21,8 +21,6 @@ const Login = () => {
     touch: {},
   })
 
-  const { user } = useAuthContext()
-
   const [loginError, setLoginError] = useState(null)
 
   const authContext = useAuthContext()
@@ -77,10 +75,6 @@ const Login = () => {
   }
 
   const isError = Object.values(error).some(err => err)
-
-  if (user) {
-    return <Redirect to="/" />
-  }
 
   return (
     <div className="row">
