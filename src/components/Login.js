@@ -116,11 +116,13 @@ const Login = () => {
 
           <button
             type="submit"
-            className="btn btn-primary"
+            className="btn btn-primary mr-3"
             disabled={isError}
           >
             Submit
           </button>
+
+          <a href={`${process.env.REACT_APP_API_URL}/auth/slack`} className="btn btn-danger"><i classNAme="fa fa-slack"></i> Login with Slack</a>
         </form>
       </div>
 
