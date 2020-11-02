@@ -18,7 +18,7 @@ http.interceptors.response.use(function(response) {
 
 export const login = ({ email, password }) => http.post('/login', { email, password })
 
-export const getProfile = () => http.get('/profile')
+export const socialLogin = (code) => http.get('/auth/slack', { params: { code }})
 
 export const logout = () => http.post('/logout')
 

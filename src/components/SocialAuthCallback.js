@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useAuthContext } from '../contexts/AuthContext'
-import { getProfile } from '../services/ApiClient'
+import { queryParams } from '../helpers/helpers'
+import { socialLogin } from '../services/ApiClient'
 
 const SocialAuthCallback = () => {
   const { login } = useAuthContext()
 
   useEffect(() => {
-    getProfile()
+    const { code } = queryParams()
+
+    socialLogin(code)
       .then(user => {
         login(user)
       })
